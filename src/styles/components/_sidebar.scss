@@ -1,0 +1,226 @@
+.sidebar {
+  position: fixed;
+  background-color: $whiteColor;
+  width: 90vw;
+  height: 100%;
+  top: 0;
+  right: -100rem; /* Start from the right (fully hidden) */
+  text-align: center;
+  padding: 3rem;
+  transition: right 0.8s cubic-bezier(0.4, 0.03, 0, 0.96);
+  z-index: 99999;
+  box-shadow: 0 0.3rem 5rem -0.12rem rgba(0, 0, 0, 0.25);
+
+  .heading {
+    justify-content: space-between;
+    align-content: center;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eaeaea;
+
+    .cartTitle {
+      font-size: 1.8rem;
+    }
+
+    .closeIcon {
+      color: $darkGreyColor;
+      padding: 0.3rem;
+      border-radius: 50%;
+      font-size: 3.5rem;
+
+      &:hover {
+        color: $primaryColor;
+      }
+    }
+  }
+
+  .cartItems {
+    display: flex;
+    flex-direction: column;
+
+    .itemsList {
+      display: flex;
+      flex-direction: column;
+      row-gap: 0.5rem;
+      height: 50rem;
+      border-bottom: 1px solid #eaeaea;
+      overflow-y: auto;
+      overflow-x: hidden;
+
+      .itemLi {
+        column-gap: 1rem;
+        width: 100%;
+        min-height: 15rem;
+        &:not(:last-child) {
+          border-bottom: 1px solid #eaeaea;
+        }
+
+        .imgDiv {
+          max-width: 10rem;
+          cursor: pointer;
+        }
+        .itemTextContent {
+          display: flex;
+          flex-direction: column;
+          font-weight: 400;
+          width: 100%;
+
+          .itemTitle {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            width: 100%;
+
+            .title {
+              font-size: 1.4rem;
+              font-weight: 600;
+              text-align: left;
+              color: $darkGreyColor;
+              max-width: 24rem;
+            }
+
+            .closeIcon {
+              .icon {
+                font-size: 1.8rem;
+                color: lighten($darkGreyColor, 20);
+                text-decoration: none;
+                &:hover {
+                  color: red;
+                  cursor: pointer;
+                }
+              }
+            }
+          }
+
+          .itemPrice {
+            display: flex;
+            height: 3.6rem;
+            column-gap: 0.5rem;
+            font-size: 1.4rem;
+
+            .quantity {
+              border: 0.1rem solid $greyColor;
+              flex: 1 1;
+              max-width: 10rem;
+
+              .decreaseIcon {
+                flex: 1 1;
+                justify-content: center;
+                cursor: pointer;
+              }
+
+              .amount {
+                justify-content: center;
+                padding: 0 0.5rem;
+              }
+
+              .increaseIcon {
+                flex: 1 1;
+                justify-content: center;
+                cursor: pointer;
+              }
+            }
+            .finalItemPrice {
+              flex: 1 1;
+              justify-content: space-around;
+              color: $greyColor;
+            }
+            .finalPrice {
+              flex: 1 1;
+              justify-content: flex-end;
+              font-weight: 500;
+            }
+          }
+        }
+      }
+    }
+    .total {
+      display: flex;
+      justify-content: end;
+      font-size: 1.6rem;
+      font-weight: 500;
+      color: $darkGreyColor;
+      margin: 3rem 0 4rem;
+      .priceAmpount {
+        margin-left: 1rem;
+      }
+    }
+    .checkout {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      .btn {
+        font-size: 1.6rem;
+        font-weight: 500;
+        justify-content: center;
+        padding: 1.4rem 0;
+        border-radius: 3rem;
+      }
+      .viewCartBtn {
+        background: $lightGreyColor;
+        color: $darkGreyColor;
+
+        &:hover {
+          background: darken($lightGreyColor, $amount: 10);
+        }
+      }
+
+      .checkoutBtn {
+        background: $primaryColor;
+        color: white;
+
+        &:hover {
+          background: darken($primaryColor, $amount: 10);
+        }
+      }
+    }
+  }
+}
+
+.showSidebar {
+  right: 0;
+  transition: right 0.5s ease;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  bottom: 0;
+  width: 100%;
+  background: $darkGreyColor;
+  overflow: hidden;
+  z-index: 9999;
+  visibility: hidden;
+}
+
+.showOverlay {
+  opacity: 0.7;
+  visibility: visible;
+}
+
+// Responsive Sidebar breakpoints
+
+@media screen and (min-width: 0em) and (max-width: $md) {
+  .sidebar {
+    max-width: 40rem;
+  }
+}
+
+@media screen and (min-width: $md) {
+  .sidebar {
+    width: 50vw;
+  }
+}
+
+@media screen and (min-width: $lg) {
+  .sidebar {
+    width: 40vw;
+  }
+}
+
+@media screen and (min-width: $xl) {
+  .sidebar {
+    max-width: 50rem;
+  }
+}

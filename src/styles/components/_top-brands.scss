@@ -1,0 +1,36 @@
+.topBrands {
+  background: $lightGreyColor;
+  padding: 2rem;
+
+  .secContainer {
+    margin: 2rem inherit;
+
+    .topBrandContainer {
+      flex-direction: column;
+      gap: 5rem;
+      .singleBrand {
+        transition: 0.5s cubic-bezier(0, 0, 0.215, 0.955);
+
+        .imgDiv {
+          img {
+            // mix-blend-mode: darken;
+            mix-blend-mode: multiply;
+            opacity: 90%;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Responsive sellers breakpoints
+@media screen and (min-width: $md) {
+  .topBrands {
+    .secContainer {
+      .topBrandContainer {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+  }
+}

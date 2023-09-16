@@ -1,0 +1,125 @@
+.hero {
+  padding-top: 6rem;
+  background: $primaryColorTint10;
+}
+
+.secContainer {
+  padding: 2rem 1.5rem;
+  text-align: center;
+  display: grid;
+  gap: 2rem;
+
+  .heroText {
+    padding-top: 3rem;
+    padding-bottom: 1.5rem;
+    .heroTitle {
+      color: $primaryColorShade30;
+      font-weight: 400;
+      font-size: 2.8rem;
+      text-align: center;
+      line-height: 1.4;
+      letter-spacing: 0.1rem;
+    }
+    p {
+      color: $primaryColorShade30;
+      font-weight: 300;
+      padding: 2rem 0;
+      line-height: 1.5;
+      font-size: 1.4rem;
+    }
+    .btns {
+      gap: 1.5rem;
+      justify-content: center;
+
+      .btn {
+        padding: 1rem 1.5rem;
+        border-radius: 0.3rem;
+        font-weight: 600;
+        margin-top: 0.5rem;
+        font-size: 1.2rem;
+      }
+
+      .btn:nth-child(1) {
+        background: $seconadaryColor;
+        &:hover {
+          background: darken($seconadaryColor, 5%);
+          color: $darkGreyColor;
+        }
+      }
+    }
+  }
+
+  .heroImage {
+    margin: auto;
+  }
+}
+
+// Responsive home breakpoints
+
+@media screen and (min-width: $xs) {
+  .hero {
+    .secContainer {
+      .heroText {
+        .heroTitle {
+          font-size: 3.5rem;
+        }
+        .btns {
+          .btns {
+            font-size: 1.4rem;
+          }
+        }
+      }
+      .heroImage {
+        max-width: 85%;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $md) {
+  .hero {
+    padding-top: 10rem;
+    .secContainer {
+      gap: 2.5rem;
+      .heroText {
+        .heroTitle {
+          font-size: 4.5rem;
+        }
+        .btns {
+          margin-top: 1rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $lg) {
+  .hero {
+    padding-top: 12rem;
+    .secContainer {
+      gap: 3rem;
+      grid-template-columns: 1fr 1fr;
+      padding: 7rem 0;
+
+      .heroText {
+        text-align: left;
+        align-self: center;
+
+        .heroTitle {
+          font-size: 5.5rem;
+          text-align: left;
+
+          .accent-color {
+            color: $primaryColor;
+          }
+        }
+        .btns {
+          .btns {
+            font-size: 1.4rem;
+            padding: 1rem 2rem;
+          }
+        }
+      }
+    }
+  }
+}

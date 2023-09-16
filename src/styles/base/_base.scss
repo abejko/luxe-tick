@@ -1,0 +1,163 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@200;300;400;500;700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Prata&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  // transition: 0.2s ease-in-out;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  // font-size: 1.4rem;
+  // font-weight: 400;
+}
+
+.displayFont {
+  font-family: "Prata", serif;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+}
+
+// colors
+
+$primaryColor: #2b59ff;
+$primaryColorTint20: lighten($primaryColor, 35%);
+$primaryColorTint10: lighten($primaryColor, 38%);
+
+$primaryColorShade10: darken($primaryColor, 5%);
+$primaryColorShade30: darken($primaryColor, 50%);
+
+$seconadaryColor: #e9ecef;
+$darkGreyColor: #212529;
+$greyColor: #adb5bd;
+$lightGreyColor: #f1f3f5;
+$whiteColor: #fff;
+
+// brakepoints
+
+$xxl: 96em; // 1536px
+$xl: 81.25em; // 1300px
+$lg: 64em; // 1024px
+$md: 48em; // 768px
+$sm: 40em; // 640px
+$xs: 31.25em; // 500px
+$xxs: 24em; // 380px
+
+// default styling
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+p {
+  color: $greyColor;
+  line-height: 1.8rem;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+  align-items: center;
+}
+
+.btn {
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+}
+
+.primaryBtn {
+  background-color: $primaryColor;
+  padding: 1rem 1.5rem;
+  color: $whiteColor;
+  border-radius: 0.3rem;
+  font-weight: 600;
+  font-size: 1.2rem;
+
+  &:hover {
+    background-color: darken($primaryColor, 10%);
+    color: $whiteColor;
+  }
+}
+
+.container {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.section {
+  padding: 4rem 0 2rem;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.icon {
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+.secTitle {
+  color: $darkGreyColor;
+  font-size: 2.5rem;
+  // line-height: 3rem;
+}
+
+// Responsive App breakpoints
+
+@media screen and (min-width: $lg) {
+  .section {
+    padding: 6rem 0 4rem;
+  }
+  .container {
+    width: 90%;
+    margin: auto;
+  }
+}
+
+@media screen and (min-width: $xl) {
+  .container {
+    max-width: 112rem;
+  }
+}
+
+// Section and sidebar styling
+
+::selection {
+  background: $primaryColor;
+  color: $whiteColor;
+}
+
+::-webkit-scrollbar {
+  width: 1rem;
+  background: $primaryColorTint20;
+}
+::-webkit-scrollbar-thumb {
+  background: lighten($primaryColor, 15%);
+  border-radius: 0.3rem;
+}

@@ -1,0 +1,116 @@
+.productDetails {
+  padding-top: 15rem;
+  padding-bottom: 8rem;
+  height: 100vh;
+
+  .secContainer {
+    margin: auto;
+    .productContainer {
+      flex-direction: column;
+
+      .productImage {
+        flex: 1 1 0;
+
+        img {
+          max-width: 30rem;
+        }
+      }
+      .textContainer {
+        flex: 1 1 0;
+        text-align: center;
+        .title {
+          font-size: 2.6rem;
+          font-weight: 500;
+          padding-top: 3rem;
+          margin-bottom: 1rem;
+        }
+        .price {
+          font-size: 2rem;
+          margin-bottom: 1.5rem;
+        }
+        .description {
+          color: $darkGreyColor;
+          font-size: 1.5rem;
+          font-weight: 300;
+          line-height: 1.7;
+          margin-bottom: 2rem;
+        }
+        .addToCartbtn {
+          background: $primaryColor;
+          padding: 1.6rem 4.5rem;
+          color: white;
+          border: none;
+          cursor: pointer;
+          border-radius: 0.3rem;
+          font-weight: 600;
+
+          &:hover {
+            background: darken($primaryColor, $amount: 10);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $xs) {
+  .productDetails {
+    .secContainer {
+      .productContainer {
+        .productImage {
+        }
+
+        .textContainer {
+          .description {
+            max-width: 50rem;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: $md) {
+  .productDetails {
+    padding-top: 13rem;
+    padding-bottom: 5rem;
+    .secContainer {
+      .productContainer {
+        .productImage {
+          margin-bottom: 0;
+        }
+
+        .textContainer {
+          .description {
+            max-width: 50rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $lg) {
+  .productDetails {
+    padding-top: 18rem;
+    padding-bottom: 13rem;
+    .secContainer {
+      .productContainer {
+        flex-direction: row;
+
+        .productImage {
+          flex: 1.1 1;
+          img {
+            // max-width: 60rem;
+            max-width: 100%;
+          }
+        }
+        .textContainer {
+          text-align: left;
+          .title {
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
+}

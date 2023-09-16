@@ -1,0 +1,117 @@
+.footer {
+  padding-top: 4rem;
+  background: $whiteColor;
+
+  .footerContainer {
+    .footerMenuDiv {
+      padding: 2rem;
+      gap: 1.5rem;
+      grid-template-columns: repeat(2, 1fr);
+      align-items: flex-start;
+
+      .singleGrid {
+        .footerTitle {
+          display: block;
+          padding-bottom: 2rem;
+          font-size: 1.6rem;
+          color: $darkGreyColor;
+          font-weight: 500;
+        }
+
+        .footerUI {
+          font-size: 1.4rem;
+          color: lighten($darkGreyColor, $amount: 40);
+          font-weight: 300;
+          cursor: pointer;
+
+          .footerLi {
+            transform: translateX(0.5rem);
+            transition: 0.3s;
+            padding-bottom: 0.5rem;
+          }
+        }
+      }
+    }
+    .lowerSection {
+      padding: 1rem;
+      font-size: 1.3rem;
+      font-weight: 300;
+      transform: translateX(1.2rem);
+      p {
+        text-align: left;
+        line-height: 1.6;
+
+        a {
+          color: $darkGreyColor;
+          padding-left: 1rem;
+        }
+      }
+    }
+  }
+}
+
+// Responsive Footer breakpoints
+
+@media screen and (min-width: $xs) {
+  .footer {
+    .footerContainer {
+      .footerMenuDiv {
+        grid-template-columns: repeat(4, 1fr);
+
+        .singleGrid {
+          .footerTitle {
+            font-size: 1.7rem;
+          }
+          .footerUI {
+            font-size: 1.4rem;
+            color: lighten($darkGreyColor, $amount: 40);
+            gap: 0.5rem;
+          }
+        }
+      }
+
+      .lowerSection {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        justify-content: center;
+
+        p {
+          text-align: center;
+          line-height: 2;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $md) {
+  .footer {
+    .footerContainer {
+      .footerMenuDiv {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $lg) {
+  .footer {
+    .footerContainer {
+      padding: 2rem 0;
+      .footerMenuDiv {
+        grid-template-columns: repeat(4, 1fr);
+        align-items: baseline;
+      }
+      .lowerSection {
+        justify-content: center;
+
+        p {
+          text-align: center;
+          line-height: 2;
+        }
+      }
+    }
+  }
+}
