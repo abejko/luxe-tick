@@ -12,7 +12,6 @@ const cartSlice = createSlice({
     ////////////////////////////////////////////
 
     addToCart: (state, action) => {
-      console.log("addToCart:", action.payload);
       const { product } = action.payload;
       const cart = state.data;
 
@@ -91,7 +90,6 @@ const cartSlice = createSlice({
     ////////////////////////////////////////////
 
     removeFromCart: (state, action) => {
-      console.log("removeFromCart:", action.payload);
       const { id } = action.payload;
       const cart = state.data;
 

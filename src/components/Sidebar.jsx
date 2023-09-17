@@ -17,14 +17,10 @@ function Sidebar({ removeSidebar, sidebarOpen }) {
   });
 
   const total = useSelector(selectTotal);
-  console.log("watches total:", total);
 
   ////////////////////////////////////////////////////
 
   const { itemAmount, data } = useSelector((state) => state.cart);
-
-  console.log("updated item amount:", itemAmount);
-  console.log("watches data:", data);
 
   return (
     <div className={`sidebar ${sidebarOpen && "showSidebar"}`}>
